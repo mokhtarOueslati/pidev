@@ -1,0 +1,105 @@
+//ajouter:
+public void ajouterEvt(Evenement e)
+        {
+            String req = "insert into Evennement (Id, Sujet, Date, emplacement, prix) values (?,?,?,?,?)" ;
+            try {
+            PreparedStatement st = MyConnection.getInstance().prepareStatement(req);
+            st.setInt(1, e.getId());
+            st.setString(2, e.getSujet());
+            st.setString(3, e.getDateEvt());
+            st.setString(4, e.getEmplacement());
+            st.setString(5, e.getPrix());
+
+
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+            
+        }
+
+//supprimer:
+ public void supprimerEvt (int id) {
+        try {
+            String req = "DELETE FROM Evennement WHERE id = ?";
+           PreparedStatement  st = MyConnection.getConnection().prepareStatement(req);
+            st.setInt(1, id); 
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(Evenement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
+//rechercher:
+public Randonnee Rechercher(String Sujet) {
+ ResultSet rs;
+ // pour récupérer le résultat de select
+       String req = "SELECT * FROM Randonnee WHERE Sujet=?";
+        try {
+           PreparedStatement  st = MyConnection.getConnection().prepareStatement(req);
+            st.setString(1, Sujet);
+            rs = st.executeQuery();
+            rs.first();
+                Reunion R = new Reunion(rs.getInt("Id"), rs.getString("Sujet")
+                        ,rs.getString("Duree"),rs.getString("DateReunion"),rs.getString("Lieu"));
+             return R;
+        } catch (SQLException ex) {
+            Logger.getLogger(Reunion.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Reunion non trouvée");
+        }
+       return null;
+       
+    }
+
+//afficher:
+public List<Reunion> afficher(String desc) {
+
+        List<Reunion> list = new ArrayList<Reunion>();
+       
+ ResultSet rs;
+ // pour récupérer le résultat de select
+        String req = "SELECT * FROM Reunion where description = ?";
+        try {
+           PreparedStatement  st = MyConnection.getConnection().prepareStatement(req);
+            rs = st.executeQuery(req);
+     rs.setString(1, desc);
+            
+            while (rs.next()) {
+                Reunion R = 
+                        new Reunion (rs.getInt("Id"),
+                                     rs.getString("Sujet"),
+                                     rs.getString("Duree"),
+                                     rs.getString("DateReunion"),
+                                     rs.getString("Lieu"));
+
+
+                        
+                list.add(R);
+            }
+            return list;
+        } catch (SQLException ex) {
+            Logger.getLogger(Reunion.class.getName()).log(Level.SEVERE, null, ex);
+            return list;
+        }
+    }
+
+
+
+//fos_user:query:
+CREATE TABLE `fos_user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `confirmation_token` varchar(180) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
