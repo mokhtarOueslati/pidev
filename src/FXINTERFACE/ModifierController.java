@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -30,9 +31,9 @@ public class ModifierController implements Initializable {
     @FXML
     private TextField destination;
     @FXML
-    private TextField creator;
+    private ComboBox<?> creator;
     @FXML
-    private TextField guide;
+    private ComboBox<?> guide;
     
     private Stage dialogStage;
     private Randonnee randonnee;

@@ -6,6 +6,7 @@
 package FXINTERFACE;
 
 import EDU.PI.MODEL.Randonnee;
+import EDU.PI.SERVICE.testRating;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

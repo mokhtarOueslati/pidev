@@ -29,12 +29,13 @@ public class Randonnee {
     private String photo_profil_path;
     private Profil creator;
     private Profil guide;
+    private int nbrPlace ;
     
-    public Randonnee() {
-        this(null,null,null,null,null,null,null,null,null);
+     public Randonnee() {
+        this(null,null,null,null,null,null,null,null,null,1);
     }
 
-    public Randonnee(String nom, String description, String date_depart, Date creation_date, Date last_modification_date, String address_randonnee, String photo_profil_path, Profil creator, Profil guide) {
+    public Randonnee(String nom, String description, String date_depart, Date creation_date, Date last_modification_date, String address_randonnee, String photo_profil_path, Profil creator, Profil guide,int nbrPlace) {
         this.nom = new SimpleStringProperty(nom);
         this.description = new SimpleStringProperty(description);
         this.date_depart = new SimpleStringProperty(date_depart);
@@ -43,9 +44,14 @@ public class Randonnee {
         this.address_randonnee = new SimpleStringProperty(address_randonnee);
         this.photo_profil_path = photo_profil_path;
         this.creator = creator;
-     
         this.guide = guide;
+        this.nbrPlace = nbrPlace ;
+        
     }
+
+    
+
+   
 
     public int getRandonnee_id() {
         return randonnee_id;
@@ -138,6 +144,15 @@ public class Randonnee {
     public void setRandonnee_id(int randonnee_id) {
         this.randonnee_id = randonnee_id;
     }
+
+    public int getNbrPlace() {
+        return nbrPlace;
+    }
+
+    public void setNbrPlace(int nbrPlace) {
+        this.nbrPlace = nbrPlace;
+    }
+    
 
     @Override
     public String toString() {

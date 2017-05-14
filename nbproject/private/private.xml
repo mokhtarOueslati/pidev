@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/mokhtar/Documents/NetBeansProjects/PI_DEV/src/FXINTERFACE/MapController.java</file>
-            <file>file:/C:/Users/mokhtar/Documents/NetBeansProjects/PI_DEV/src/pi_dev/PI_DEV.java</file>
-            <file>file:/C:/Users/mokhtar/Documents/NetBeansProjects/PI_DEV/src/EDU/PI/MODEL/Randonnee.java</file>
-            <file>file:/C:/Users/mokhtar/Documents/NetBeansProjects/PI_DEV/src/FXINTERFACE/Modifier.fxml</file>
-            <file>file:/C:/Users/mokhtar/Documents/NetBeansProjects/PI_DEV/src/FXINTERFACE/testajout.java</file>
-            <file>file:/C:/Users/mokhtar/Documents/NetBeansProjects/PI_DEV/src/FXINTERFACE/AcceuilRandonneeController.java</file>
-            <file>file:/C:/Users/mokhtar/Documents/NetBeansProjects/PI_DEV/src/EDU/PI/SERVICE/RandonneeService.java</file>
-            <file>file:/C:/Users/mokhtar/Documents/NetBeansProjects/PI_DEV/src/FXINTERFACE/ModifierController.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

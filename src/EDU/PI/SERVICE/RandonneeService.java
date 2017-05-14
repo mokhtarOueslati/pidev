@@ -20,7 +20,7 @@ import javafx.collections.ObservableList;
  */
 public class RandonneeService {
   public void insertRandonnee (Randonnee r) throws SQLException {
-        String req ="insert into randonnee (nom,description,date_depart,creation_date,last_modification_date,address_randonnee,photo_profil_path,creator_id,guide_id) values (?,?,?,?,?,?,?,?,?)";
+        String req ="insert into randonnee (nom,description,date_depart,creation_date,last_modification_date,address_randonnee,photo_profil_path,creator_id,guide_id,nbr_place) values (?,?,?,?,?,?,?,?,?,?)";
         
         try{
         PreparedStatement ps =MyConnection.getInstance().prepareStatement(req);
@@ -33,6 +33,7 @@ public class RandonneeService {
         ps.setString(7, r.getPhoto_profil_path());
         ps.setInt(8, r.getCreator().getProfil_id());
         ps.setInt(9, r.getGuide().getProfil_id());
+        ps.setInt(10, r.getNbrPlace());
         ps.executeUpdate();
         }
         catch(SQLException e){
@@ -40,7 +41,7 @@ public class RandonneeService {
         }
     }
     
-    public ObservableList<Randonnee> readAll() throws SQLException {
+ public ObservableList<Randonnee> readAll() throws SQLException {
         ObservableList<Randonnee> list = FXCollections.observableArrayList();
         String req ="select * from randonnee";
         ProfilService pser = new ProfilService();
@@ -71,6 +72,9 @@ public class RandonneeService {
         return null;
     }
     
+  
+  
+  
     public  void deleteRandonnee (int id ) throws SQLException{
         String req ="delete from randonnee where randonnee_id=?";
 

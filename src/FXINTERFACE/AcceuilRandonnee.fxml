@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -15,16 +18,16 @@
 
 <AnchorPane id="AnchorPane" prefHeight="623.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXINTERFACE.AcceuilRandonneeController">
    <children>
-      <Pane layoutX="203.0" prefHeight="121.0" prefWidth="154.0" style="-fx-background-color: #8ec0e7;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="203.0" prefHeight="121.0" prefWidth="154.0" style="-fx-background-color: #3b9a61;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="52.0" layoutY="26.0" prefHeight="51.0" prefWidth="386.0" text="TUNIHIKER">
+            <Label layoutX="52.0" layoutY="26.0" prefHeight="51.0" prefWidth="386.0" text="TUNIHIKER" textFill="#f2efef">
                <font>
                   <Font name="Comic Sans MS" size="49.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <TabPane layoutY="121.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+      <TabPane layoutY="99.0" prefHeight="524.0" prefWidth="600.0" stylesheets="@newCascadeStyleSheet.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="99.0">
         <tabs>
           <Tab text="Creer">
             <content>
@@ -32,55 +35,62 @@
                      <children>
                         <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0">
                            <children>
-                              <ImageView fitHeight="503.0" fitWidth="600.0" layoutY="-1.0" opacity="0.97">
+                              <ImageView fitHeight="501.0" fitWidth="600.0" layoutY="-3.0" opacity="0.97">
                                  <image>
                                     <Image url="@../img/background.jpg" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="45.0" layoutY="64.0" prefHeight="34.0" prefWidth="42.0" text="Nom" textFill="#f7f9fa">
+                              <Label layoutX="45.0" layoutY="88.0" prefHeight="34.0" prefWidth="42.0" stylesheets="@newCascadeStyleSheet.css" text="Nom" textFill="#f7f9fa">
                                  <font>
                                     <Font name="System Bold Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="43.0" layoutY="105.0" text="Description" textFill="#f7f9fa">
+                              <Label layoutX="43.0" layoutY="131.0" text="Description" textFill="#f7f9fa">
                                  <font>
                                     <Font name="System Bold Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="42.0" layoutY="146.0" prefHeight="27.0" prefWidth="136.0" text="Date De Depart" textFill="#f7f9fa">
+                              <Label layoutX="45.0" layoutY="172.0" prefHeight="27.0" prefWidth="136.0" text="Date De Depart" textFill="#f7f9fa">
                                  <font>
                                     <Font name="System Bold Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="42.0" layoutY="189.0" text="Destination" textFill="#f7f9fa">
+                              <Label layoutX="42.0" layoutY="215.0" text="Destination" textFill="#f7f9fa">
                                  <font>
                                     <Font name="System Bold Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="41.0" layoutY="227.0" text="Creator" textFill="#f7f9fa">
+                              <Label layoutX="41.0" layoutY="249.0" text="Creator" textFill="#f7f9fa">
                                  <font>
                                     <Font name="System Bold Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="41.0" layoutY="269.0" text="Guide" textFill="#f7f9fa">
+                              <Label layoutX="41.0" layoutY="295.0" text="Guide" textFill="#f7f9fa">
                                  <font>
                                     <Font name="System Bold Italic" size="18.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="nom" layoutX="201.0" layoutY="69.0" />
-                              <TextField fx:id="description" layoutX="201.0" layoutY="106.0" />
-                              <TextField fx:id="depart" layoutX="201.0" layoutY="147.0" />
-                              <TextField fx:id="destination" layoutX="201.0" layoutY="190.0" />
-                              <TextField fx:id="creator" layoutX="201.0" layoutY="228.0" />
-                              <TextField fx:id="guide" layoutX="201.0" layoutY="270.0" />
-                              <Button layoutX="387.0" layoutY="400.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="42.0" prefWidth="173.0" text="Ajouter">
+                              <TextField fx:id="nom" layoutX="212.0" layoutY="93.0" prefHeight="25.0" prefWidth="168.0" promptText="Saisir un nom " style="-fx-background-radius: 7;" />
+                              <TextField fx:id="description" layoutX="212.0" layoutY="132.0" prefHeight="25.0" prefWidth="168.0" promptText="Donner une description" style="-fx-background-radius: 7;" />
+                              <TextField fx:id="destination" layoutX="212.0" layoutY="216.0" prefHeight="25.0" prefWidth="168.0" promptText="Ecrire La Destination" style="-fx-background-radius: 7;" />
+                              <TextField fx:id="creator" layoutX="212.0" layoutY="250.0" prefHeight="25.0" prefWidth="168.0" promptText="Ecrire Votre Nom" style="-fx-background-radius: 7;" />
+                              <TextField fx:id="guide" layoutX="212.0" layoutY="296.0" prefHeight="25.0" prefWidth="168.0" promptText="Choisir Un Guide" style="-fx-background-radius: 7;" />
+                              <Button layoutX="402.0" layoutY="426.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="35.0" prefWidth="159.0" style="-fx-background-color: #3b9a61; -fx-background-radius: 11;" styleClass="menu-button" stylesheets="@newCascadeStyleSheet.css" text="Creer" textFill="#fdfffe">
                                  <font>
                                     <Font name="Comic Sans MS Bold" size="23.0" />
                                  </font>
                               </Button>
+                              <Label layoutX="43.0" layoutY="337.0" prefHeight="27.0" prefWidth="169.0" text="Nombre De Places" textFill="#f7f9fa">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nbr_place" layoutX="212.0" layoutY="338.0" prefHeight="25.0" prefWidth="168.0" promptText="Donner Un Nombre" style="-fx-background-radius: 7;" />
+                              <DatePicker fx:id="depart" layoutX="212.0" layoutY="173.0" prefHeight="25.0" prefWidth="168.0" promptText="Date " style="-fx-background-radius: 7;" />
                            </children>
                         </AnchorPane>
-                     </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
             </content>
           </Tab>
             <Tab text="Afficher">
@@ -89,46 +99,39 @@
                      <children>
                         <AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="600.0">
                            <children>
-                              <ImageView fitHeight="495.0" fitWidth="800.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.topAnchor="0.0">
+                              <ImageView cache="true" fitHeight="495.0" fitWidth="800.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.topAnchor="0.0">
                                  <image>
                                     <Image url="@../img/background.jpg" />
                                  </image>
                               </ImageView>
-                              <TableView fx:id="randoTable" layoutX="13.0" layoutY="35.0" prefHeight="372.0" prefWidth="578.0">
+                              <TableView fx:id="randoTable" layoutX="6.0" layoutY="57.0" prefHeight="357.0" prefWidth="584.0" styleClass="list-cell">
                                  <columns>
-                                    <TableColumn fx:id="NomColumn" prefWidth="75.0" text="Nom" />
-                                    <TableColumn fx:id="DescriptionColumn" prefWidth="105.0" text="Description" />
-                                    <TableColumn fx:id="DateDepartColumn" prefWidth="113.0" text="Date De Depart" />
-                                    <TableColumn fx:id="DestinationColumn" prefWidth="104.0" text="Destination" />
-                                    <TableColumn fx:id="CreatorColumn" prefWidth="92.0" text="Creator" />
-                                    <TableColumn fx:id="GuideColumn" prefWidth="87.0" text="Guide" />
+                                    <TableColumn fx:id="NomColumn" prefWidth="138.0" text="Nom" />
+                                    <TableColumn fx:id="DescriptionColumn" prefWidth="146.0" text="Description" />
+                                    <TableColumn fx:id="DateDepartColumn" prefWidth="137.0" text="Date De Depart" />
+                                    <TableColumn fx:id="DestinationColumn" prefWidth="149.0" text="Destination" />
                                  </columns>
                               </TableView>
-                              <Button layoutX="524.0" layoutY="433.0" mnemonicParsing="false" onAction="#Modifier" text="Modifier" />
-                              <Button layoutX="421.0" layoutY="433.0" mnemonicParsing="false" onAction="#Supprimer" text="Supprimer" />
-                              <Button layoutX="317.0" layoutY="433.0" mnemonicParsing="false" onAction="#localisation" text="Localisation" />
+                              <Button layoutX="519.0" layoutY="446.0" mnemonicParsing="false" onAction="#Modifier" style="-fx-background-radius: 12;" styleClass="buttonFixed" text="Modifier" />
+                              <Button layoutX="424.0" layoutY="446.0" mnemonicParsing="false" onAction="#Supprimer" style="-fx-background-radius: 11;" styleClass="buttonFixed" text="Supprimer" />
+                              <Button layoutX="314.0" layoutY="446.0" mnemonicParsing="false" onAction="#localisation" style="-fx-background-radius: 11;" styleClass="buttonFixed" text="Localisation" />
+                              <TextField fx:id="recherche" layoutX="119.0" layoutY="14.0" prefHeight="25.0" prefWidth="201.0" promptText="                   Filtrer ici" style="-fx-background-radius: 12;" />
+                              <Label layoutX="16.0" layoutY="13.0" prefHeight="27.0" prefWidth="95.0" text="Rechercher" textFill="#fcfeff">
+                                 <font>
+                                    <Font name="FrankRuehl" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="210.0" layoutY="446.0" mnemonicParsing="false" onAction="#Participer" prefHeight="25.0" prefWidth="84.0" style="-fx-background-radius: 11;" styleClass="buttonFixed" text="Participer" />
+                              <Slider fx:id="S" blockIncrement="1.0" layoutX="31.0" layoutY="424.0" majorTickUnit="5.0" max="5.0" min="1.0" minorTickCount="1" prefHeight="22.0" prefWidth="140.0" value="1.0">
+                                 <stylesheets>
+                                    <URL value="@PROJETRAND2.css" />
+                                    <URL value="@newCascadeStyleSheet.css" />
+                                 </stylesheets></Slider>
+                              <Button layoutX="52.0" layoutY="446.0" mnemonicParsing="false" onAction="#Rate" prefHeight="25.0" prefWidth="83.0" style="-fx-background-radius: 11;" styleClass="buttonFixed" text="Rate" />
                            </children>
                         </AnchorPane>
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="Rechercher">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fitHeight="600.0" fitWidth="800.0" layoutX="-126.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-39.33331298828125" AnchorPane.topAnchor="0.0">
-                           <image>
-                              <Image url="@../img/background.jpg" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="74.0" layoutY="214.0" text="Search" textFill="#baccf8">
-                           <font>
-                              <Font name="Consolas Bold Italic" size="36.0" />
-                           </font>
-                        </Label>
-                        <TextField layoutX="230.0" layoutY="210.0" prefHeight="45.0" prefWidth="293.0" />
-                        <Button layoutX="550.0" layoutY="210.0" mnemonicParsing="false" onAction="#RechercherDestination" prefHeight="45.0" prefWidth="25.0" text="&gt;" />
-                     </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
               </content>
             </Tab>
         </tabs>

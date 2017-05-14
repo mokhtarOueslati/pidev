@@ -1,60 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXINTERFACE.ModifierController">
+<AnchorPane id="AnchorPane" prefHeight="342.0" prefWidth="566.0" style="-fx-background-color: #2F4033;" styleClass="thumb" stylesheets="@PROJETRAND2.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXINTERFACE.ModifierController">
    <children>
-      <ImageView fitHeight="495.0" fitWidth="687.0" layoutX="-27.0" layoutY="-37.0" opacity="0.6">
-         <image>
-            <Image url="@../img/background.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="45.0" layoutY="64.0" prefHeight="34.0" prefWidth="42.0" text="Nom" textFill="#533131">
+      
+      <Label layoutX="45.0" layoutY="52.0" prefHeight="34.0" prefWidth="42.0" text="Nom" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="105.0" text="Description" textFill="#533131">
+      <Label layoutX="43.0" layoutY="93.0" text="Description" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="42.0" layoutY="146.0" prefHeight="27.0" prefWidth="136.0" text="Date De Depart" textFill="#533131">
+      <Label layoutX="45.0" layoutY="134.0" prefHeight="27.0" prefWidth="136.0" text="Date De Depart" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="42.0" layoutY="189.0" text="Destination" textFill="#533131">
+      <Label layoutX="42.0" layoutY="177.0" text="Destination" textFill="#fcfafa">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="227.0" text="Creator" textFill="#533131">
+      <Label layoutX="43.0" layoutY="215.0" text="Creator" textFill="#fcf7f7">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="269.0" text="Guide" textFill="#533131">
+      <Label layoutX="41.0" layoutY="257.0" text="Guide" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="nom" layoutX="201.0" layoutY="69.0" prefHeight="25.0" prefWidth="203.0" />
-      <TextField fx:id="description" layoutX="201.0" layoutY="106.0" prefHeight="25.0" prefWidth="203.0" />
-      <TextField fx:id="depart" layoutX="201.0" layoutY="147.0" prefHeight="25.0" prefWidth="203.0" />
-      <TextField fx:id="destination" layoutX="201.0" layoutY="190.0" prefHeight="25.0" prefWidth="203.0" />
-      <TextField fx:id="creator" layoutX="201.0" layoutY="228.0" prefHeight="25.0" prefWidth="203.0" />
-      <TextField fx:id="guide" layoutX="201.0" layoutY="270.0" prefHeight="25.0" prefWidth="203.0" />
-      <Button layoutX="83.0" layoutY="366.0" mnemonicParsing="false" onAction="#Update" prefHeight="27.0" prefWidth="508.0" text="UPDATE">
+      <TextField fx:id="nom" layoutX="201.0" layoutY="57.0" prefHeight="25.0" prefWidth="203.0" />
+      <TextField fx:id="description" layoutX="201.0" layoutY="94.0" prefHeight="25.0" prefWidth="203.0" />
+      <TextField fx:id="depart" layoutX="201.0" layoutY="135.0" prefHeight="25.0" prefWidth="203.0" />
+      <TextField fx:id="destination" layoutX="201.0" layoutY="178.0" prefHeight="25.0" prefWidth="203.0" />
+      <Button layoutX="409.0" layoutY="283.0" mnemonicParsing="false" onAction="#Update" prefHeight="44.0" prefWidth="143.0" styleClass="buttonSuccSolde" stylesheets="@newCascadeStyleSheet.css" text="UPDATE">
          <font>
             <Font name="Comic Sans MS Bold" size="23.0" />
          </font>
       </Button>
+      <ComboBox fx:id="creator" layoutX="201.0" layoutY="216.0" prefHeight="25.0" prefWidth="203.0" />
+      <ComboBox fx:id="guide" layoutX="203.0" layoutY="258.0" prefHeight="25.0" prefWidth="203.0" />
    </children>
 </AnchorPane>

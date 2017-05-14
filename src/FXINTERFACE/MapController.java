@@ -23,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import sun.applet.Main;
 
 /**
@@ -100,6 +101,10 @@ Main application;
 
     public void setApp(Main application) {
         this.application = application;
+    }
+
+    void setDialog(Stage dialogStage) {
+       
     }
 
 }
